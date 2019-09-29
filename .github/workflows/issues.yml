@@ -1,0 +1,15 @@
+
+// issues.yml
+on: issues
+
+name: Triage
+jobs:
+  createAnIssue:
+    name: Triage an issue
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Triage an issue
+      uses: bdougie/triage-new-issues@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
